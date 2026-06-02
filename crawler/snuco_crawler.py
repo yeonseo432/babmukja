@@ -372,11 +372,13 @@ def build_meal(
     text: str,
     section_notes_enabled: bool = False,
     cafeteria_id: str | None = None,
+    meal_key: str | None = None,
     include_section_titles: set[str] | None = None,
     exclude_section_titles: set[str] | None = None,
     keep_time_fields: bool = True,
 ) -> dict:
     sections = parse_sections(text, section_notes_enabled, cafeteria_id)
+    sections = normalize_ourhome_breakfast_sections(cafeteria_id, meal_key, sections)
     if include_section_titles is not None:
         sections = [section for section in sections if section["title"] in include_section_titles]
     if exclude_section_titles is not None:
@@ -389,6 +391,44 @@ def build_meal(
         "busyHours": parse_time_range(text, "혼잡시간") if keep_time_fields else None,
         "notes": parse_notes(text, section_notes_enabled),
     }
+
+
+def normalize_ourhome_breakfast_sections(
+    cafeteria_id: str | None,
+    meal_key: str | None,
+    sections: list[dict],
+) -> list[dict]:
+    if cafeteria_id != "ourhome_901" or meal_key != "breakfast":
+        return sections
+
+    normalized = []
+    for section in sections:
+        if section["title"] != "general":
+            normalized.append(section)
+            continue
+
+        lines = compact_lines(section["rawText"])
+        if not lines:
+            normalized.append(section)
+            continue
+
+        match = re.fullmatch(r"(?P<title>세미양식부페)\s*[:：]\s*(?P<price>[0-9,]+)\s*[원웡]", lines[0])
+        if not match:
+            normalized.append(section)
+            continue
+
+        raw_text = "\n".join(lines[1:])
+        normalized.append(
+            {
+                "title": match.group("title"),
+                "price": int(match.group("price").replace(",", "")),
+                "rawText": raw_text,
+                "items": parse_items(raw_text, include_unpriced=True, cafeteria_id=cafeteria_id),
+                "notes": section["notes"],
+            }
+        )
+
+    return normalized
 
 
 def merge_sections_by_title(sections: list[dict]) -> list[dict]:
@@ -439,6 +479,7 @@ def build_payload(date: str, source_url: str, rows: list[list[str]]) -> tuple[di
                 row[index + 1],
                 section_notes_enabled=cafeteria_id == "building_301",
                 cafeteria_id=cafeteria_id,
+                meal_key=meal_key,
                 keep_time_fields=cafeteria_id != "building_301",
             )
             for index, meal_key in enumerate(MEAL_KEYS)
@@ -466,6 +507,7 @@ def build_payload(date: str, source_url: str, rows: list[list[str]]) -> tuple[di
                 meal_key: build_meal(
                     row[index + 1],
                     cafeteria_id=cafeteria_id,
+                    meal_key=meal_key,
                     include_section_titles=fixed_section_titles,
                 )
                 for index, meal_key in enumerate(MEAL_KEYS)
@@ -483,6 +525,7 @@ def build_payload(date: str, source_url: str, rows: list[list[str]]) -> tuple[di
                 meal_key: build_meal(
                     row[index + 1],
                     cafeteria_id=cafeteria_id,
+                    meal_key=meal_key,
                     exclude_section_titles=fixed_section_titles,
                 )
                 for index, meal_key in enumerate(MEAL_KEYS)
