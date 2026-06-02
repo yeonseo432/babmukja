@@ -34,7 +34,16 @@ jobs:
 
       - name: Build web
         working-directory: app
-        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
+        run: >
+          flutter build web --release
+          --base-href "/${{ github.event.repository.name }}/"
+          --dart-define=MENU_API_BASE_URL=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/data
+
+      - name: Copy menu data
+        run: |
+          mkdir -p app/build/web/data
+          cp data/cafeterias.json app/build/web/data/cafeterias.json
+          cp -R data/menus app/build/web/data/menus
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

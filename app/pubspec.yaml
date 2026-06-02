@@ -59,13 +59,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/data/cafeterias.json
-    - assets/data/default_cafeteria_order.json
-    - assets/data/fixed_menus.json
-    - assets/data/menus/2026-05-28.json
-    - assets/data/menus/2026-05-29.json
-    - assets/data/menus/latest.json
-    - assets/menu_images/burger.jpeg
+    - assets/menu_images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

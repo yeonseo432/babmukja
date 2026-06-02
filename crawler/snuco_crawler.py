@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import argparse
+import hashlib
 import json
 import re
-import shutil
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
 from html import unescape
@@ -412,7 +413,8 @@ def merge_sections_by_title(sections: list[dict]) -> list[dict]:
 
 def slug_for_unknown(name: str) -> str:
     ascii_slug = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-    return ascii_slug or f"cafeteria_{abs(hash(name))}"
+    digest = hashlib.sha1(name.encode("utf-8")).hexdigest()[:10]
+    return ascii_slug or f"cafeteria_{digest}"
 
 
 def build_payload(date: str, source_url: str, rows: list[list[str]]) -> tuple[dict, list[dict], list[dict]]:
@@ -586,44 +588,271 @@ def write_json(path: Path, data) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def load_json(path: Path, default):
+    if not path.exists():
+        return default
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json_if_changed(path: Path, data) -> bool:
+    next_text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
+    if path.exists() and path.read_text(encoding="utf-8") == next_text:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(next_text, encoding="utf-8")
+    return True
+
+
+def equivalent_payload(existing: dict, next_payload: dict) -> bool:
+    existing_copy = dict(existing)
+    next_copy = dict(next_payload)
+    existing_copy.pop("updatedAt", None)
+    next_copy.pop("updatedAt", None)
+    return existing_copy == next_copy
+
+
+def write_payload_if_changed(path: Path, payload: dict) -> bool:
+    if path.exists():
+        existing = json.loads(path.read_text(encoding="utf-8"))
+        if equivalent_payload(existing, payload):
+            return False
+    write_json(path, payload)
+    return True
+
+
+def append_only_cafeterias(path: Path, discovered: list[dict], run_log: dict) -> bool:
+    existing = load_json(path, [])
+    by_id = {item["id"]: item for item in existing}
+    changed = False
+
+    for item in discovered:
+        existing_item = by_id.get(item["id"])
+        if existing_item is None:
+            existing.append(item)
+            by_id[item["id"]] = item
+            run_log["newCafeterias"].append(item)
+            changed = True
+            continue
+
+        changed_fields = {
+            key: {"existing": existing_item.get(key), "crawled": item.get(key)}
+            for key in ("name", "phone")
+            if existing_item.get(key) != item.get(key)
+        }
+        if changed_fields:
+            run_log["metadataChanges"].append(
+                {
+                    "id": item["id"],
+                    "fields": changed_fields,
+                }
+            )
+
+    if changed:
+        write_json(path, existing)
+    return changed
+
+
+def source_config(source: str, date: str):
+    if source == "snuco":
+        return fetch_html, parse_table_rows, f"https://snuco.snu.ac.kr/foodmenu/?date={date}&orderby=DESC"
+    if source == "dorm":
+        return fetch_dorm_html, lambda html: extra_dorm_rows(parse_table_rows(html)), f"https://snudorm.snu.ac.kr/foodmenu/?date={date}&orderby=DESC"
+    raise ValueError(f"unknown source: {source}")
+
+
+def fetch_source(date: str, source: str, raw_dir: Path) -> dict:
+    fetcher, _, source_url = source_config(source, date)
+    raw_path = raw_dir / source / f"{date}.html"
+    try:
+        html, _ = fetcher(date)
+    except Exception as exc:
+        return {
+            "status": "failed",
+            "sourceUrl": source_url,
+            "rawPath": str(raw_path),
+            "error": str(exc),
+        }
+
+    previous = raw_path.read_text(encoding="utf-8") if raw_path.exists() else None
+    changed = previous != html
+    if changed:
+        raw_path.parent.mkdir(parents=True, exist_ok=True)
+        raw_path.write_text(html, encoding="utf-8")
+    return {
+        "status": "success",
+        "sourceUrl": source_url,
+        "rawPath": str(raw_path),
+        "changed": changed,
+    }
+
+
+def parse_successful_sources(date: str, source_statuses: dict, raw_dir: Path) -> tuple[list[list[str]], dict[str, str]]:
+    rows = []
+    source_urls = {}
+    for source, status in source_statuses.items():
+        if status["status"] != "success":
+            continue
+        _, parser, source_url = source_config(source, date)
+        html = (raw_dir / source / f"{date}.html").read_text(encoding="utf-8")
+        rows.extend(parser(html))
+        source_urls[source] = source_url
+    return rows, source_urls
+
+
+def crawl_date(args, date: str, run_log: dict) -> None:
+    output_dir = Path(args.output_dir)
+    raw_dir = Path(args.raw_dir)
+    daily_path = output_dir / f"{date}.json"
+    fixed_path = output_dir / f"{date}-fixed.json"
+
+    source_statuses = {}
+    for index, source in enumerate(("snuco", "dorm")):
+        if index > 0:
+            time.sleep(args.request_delay_seconds)
+        source_statuses[source] = fetch_source(date, source, raw_dir)
+
+    run_log["sources"][date] = source_statuses
+    any_success = any(status["status"] == "success" for status in source_statuses.values())
+    all_success = all(status["status"] == "success" for status in source_statuses.values())
+    any_changed = any(status.get("changed") for status in source_statuses.values())
+    if not any_success:
+        return
+    if all_success and not any_changed and daily_path.exists() and fixed_path.exists():
+        run_log["unchangedDates"].append(date)
+        return
+
+    rows, source_urls = parse_successful_sources(date, source_statuses, raw_dir)
+    payload, cafeterias, fixed_entries = build_payload(date, source_urls.get("snuco", ""), rows)
+    payload["sourceUrls"] = source_urls
+
+    changed_files = []
+    if write_payload_if_changed(daily_path, payload):
+        changed_files.append(str(daily_path))
+    if write_json_if_changed(fixed_path, fixed_entries):
+        changed_files.append(str(fixed_path))
+    if append_only_cafeterias(Path(args.cafeterias_path), cafeterias, run_log):
+        changed_files.append(args.cafeterias_path)
+    run_log["generatedFiles"].extend(changed_files)
+
+
+def cleanup_raw(raw_dir: Path, target_dates: set[str]) -> list[str]:
+    removed = []
+    for source in ("snuco", "dorm"):
+        source_dir = raw_dir / source
+        if not source_dir.exists():
+            continue
+        for path in source_dir.glob("*.html"):
+            if path.stem not in target_dates:
+                path.unlink()
+                removed.append(str(path))
+    return removed
+
+
+def validate_outputs(output_dir: Path, cafeterias_path: Path, target_dates: list[str]) -> list[str]:
+    errors = []
+    cafeterias = load_json(cafeterias_path, [])
+    known_ids = {item["id"] for item in cafeterias}
+    for date in target_dates:
+        daily_path = output_dir / f"{date}.json"
+        fixed_path = output_dir / f"{date}-fixed.json"
+        if not daily_path.exists():
+            continue
+        daily = json.loads(daily_path.read_text(encoding="utf-8"))
+        if daily.get("date") != date:
+            errors.append(f"{daily_path}: date field mismatch")
+        if "cafeterias" not in daily:
+            errors.append(f"{daily_path}: missing cafeterias")
+        for entry in daily.get("cafeterias", []):
+            if entry.get("cafeteriaId") not in known_ids:
+                errors.append(f"{daily_path}: unknown cafeteriaId {entry.get('cafeteriaId')}")
+        if fixed_path.exists():
+            fixed_entries = json.loads(fixed_path.read_text(encoding="utf-8"))
+            for entry in fixed_entries:
+                if entry.get("cafeteriaId") not in known_ids:
+                    errors.append(f"{fixed_path}: unknown cafeteriaId {entry.get('cafeteriaId')}")
+    return errors
+
+
+def date_range(start_date: str, days: int) -> list[str]:
+    start = datetime.strptime(start_date, "%Y-%m-%d").date()
+    return [(start + timedelta(days=offset)).isoformat() for offset in range(days)]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date", required=True, help="Menu date, e.g. 2026-05-28")
+    parser.add_argument("--date", help="First menu date, e.g. 2026-05-28")
+    parser.add_argument("--days", type=int, default=1)
     parser.add_argument("--output-dir", default="data/menus")
     parser.add_argument("--cafeterias-path", default="data/cafeterias.json")
-    parser.add_argument("--fixed-menus-path", default="data/fixed_menus.json")
+    parser.add_argument("--raw-dir", default="data/raw")
+    parser.add_argument("--crawl-runs-dir", default="data/crawl_runs")
+    parser.add_argument("--request-delay-seconds", type=float, default=8)
+    parser.add_argument("--date-delay-seconds", type=float, default=12)
     parser.add_argument("--html-path", help="Use a saved HTML file instead of fetching")
     parser.add_argument("--dorm-html-path", help="Use a saved dorm HTML file instead of fetching")
     args = parser.parse_args()
 
-    if args.html_path:
+    if args.date is None:
+        args.date = datetime.now(KST).date().isoformat()
+
+    if args.html_path or args.dorm_html_path:
+        if args.days != 1:
+            raise ValueError("--html-path and --dorm-html-path only support a single date")
+        if not args.html_path:
+            raise ValueError("--html-path is required when using saved HTML")
         html = Path(args.html_path).read_text(encoding="utf-8")
         source_url = f"https://snuco.snu.ac.kr/foodmenu/?date={args.date}&orderby=DESC"
-    else:
-        html, source_url = fetch_html(args.date)
+        rows = parse_table_rows(html)
+        if args.dorm_html_path:
+            dorm_html = Path(args.dorm_html_path).read_text(encoding="utf-8")
+            rows.extend(extra_dorm_rows(parse_table_rows(dorm_html)))
+        payload, cafeterias, fixed_entries = build_payload(args.date, source_url, rows)
+        output_dir = Path(args.output_dir)
+        daily_path = output_dir / f"{args.date}.json"
+        fixed_path = output_dir / f"{args.date}-fixed.json"
+        write_payload_if_changed(daily_path, payload)
+        write_json_if_changed(fixed_path, fixed_entries)
+        append_only_cafeterias(
+            Path(args.cafeterias_path),
+            cafeterias,
+            {"newCafeterias": [], "metadataChanges": []},
+        )
+        print(f"wrote {daily_path}")
+        print(f"wrote {fixed_path}")
+        return
 
-    rows = parse_table_rows(html)
-    if args.dorm_html_path:
-        dorm_html = Path(args.dorm_html_path).read_text(encoding="utf-8")
-    else:
-        dorm_html, _ = fetch_dorm_html(args.date)
-    rows.extend(extra_dorm_rows(parse_table_rows(dorm_html)))
+    target_dates = date_range(args.date, args.days)
+    run_log = {
+        "runDate": datetime.now(KST).date().isoformat(),
+        "startedAt": datetime.now(KST).isoformat(timespec="seconds"),
+        "targetDates": target_dates,
+        "sources": {},
+        "newCafeterias": [],
+        "metadataChanges": [],
+        "generatedFiles": [],
+        "unchangedDates": [],
+        "removedRawFiles": [],
+        "validationErrors": [],
+    }
 
-    payload, cafeterias, fixed_entries = build_payload(args.date, source_url, rows)
+    for index, target_date in enumerate(target_dates):
+        if index > 0:
+            time.sleep(args.date_delay_seconds)
+        crawl_date(args, target_date, run_log)
 
-    output_dir = Path(args.output_dir)
-    dated_path = output_dir / f"{args.date}.json"
-    latest_path = output_dir / "latest.json"
-    write_json(dated_path, payload)
-    shutil.copyfile(dated_path, latest_path)
-    write_json(Path(args.cafeterias_path), cafeterias)
-    write_json(Path(args.fixed_menus_path), fixed_entries)
+    run_log["removedRawFiles"] = cleanup_raw(Path(args.raw_dir), set(target_dates))
+    run_log["validationErrors"] = validate_outputs(
+        Path(args.output_dir),
+        Path(args.cafeterias_path),
+        target_dates,
+    )
+    run_log["finishedAt"] = datetime.now(KST).isoformat(timespec="seconds")
 
-    print(f"wrote {dated_path}")
-    print(f"wrote {latest_path}")
-    print(f"wrote {args.cafeterias_path}")
-    print(f"wrote {args.fixed_menus_path}")
-    print(f"parsed {len(cafeterias)} cafeterias")
+    log_path = Path(args.crawl_runs_dir) / f"{run_log['runDate']}.json"
+    write_json(log_path, run_log)
+    print(f"wrote {log_path}")
+    if run_log["validationErrors"]:
+        print("\n".join(run_log["validationErrors"]))
 
 
 if __name__ == "__main__":
