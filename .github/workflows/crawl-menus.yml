@@ -1,0 +1,75 @@
+name: Crawl menus
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check retry eligibility
+        id: retry
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "${{ github.event.schedule }}" != "0 4 * * *" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          today="$(TZ=Asia/Seoul date +%F)"
+          if ! git fetch origin codex/crawl-menus:refs/remotes/origin/codex/crawl-menus; then
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if ! git show "origin/codex/crawl-menus:data/crawl_runs/$today.json" > /tmp/previous-crawl.json; then
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+
+          with open("/tmp/previous-crawl.json", encoding="utf-8") as file:
+              log = json.load(file)
+
+          failed = any(
+              source.get("status") != "success"
+              for sources in log.get("sources", {}).values()
+              for source in sources.values()
+          )
+          print(f"should_run={'true' if failed else 'false'}")
+          PY
+
+      - name: Crawl next 7 days
+        if: steps.retry.outputs.should_run == 'true'
+        run: |
+          python3 crawler/snuco_crawler.py \
+            --date "$(TZ=Asia/Seoul date +%F)" \
+            --days 7
+
+      - name: Build PR body
+        if: steps.retry.outputs.should_run == 'true'
+        run: python3 crawler/format_crawl_pr.py > /tmp/crawl-pr-body.md
+
+      - name: Create or update pull request
+        if: steps.retry.outputs.should_run == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: codex/crawl-menus
+          title: "Update crawled menu data"
+          body-path: /tmp/crawl-pr-body.md
+          commit-message: "Update crawled menu data"
+          add-paths: |
+            data/cafeterias.json
+            data/menus
+            data/raw
+            data/crawl_runs

@@ -1,10 +1,37 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'menu_api_client.dart'
+    if (dart.library.html) 'menu_api_client_web.dart'
+    if (dart.library.io) 'menu_api_client_io.dart';
+
 const _appMaxWidth = 430.0;
+const _menuApiBaseUrl = String.fromEnvironment('MENU_API_BASE_URL');
+const _defaultCafeteriaOrder = CafeteriaOrder(
+  daily: [
+    'student_center',
+    'jahayeon_3f',
+    'jahayeon_2f',
+    'arts_cafeteria',
+    'dure_midam',
+    'dongwon',
+    'dormitory',
+    'ourhome_901',
+    'third_cafeteria',
+    'building_302',
+    'building_301',
+  ],
+  fixed: [
+    'burgerun_burger',
+    'dure_midam',
+    'engineering_snack',
+    'building_75_1_food_court',
+    'building_220',
+  ],
+);
 
 void main() {
   runApp(const SnuMealsApp());
@@ -54,6 +81,7 @@ class _MealsHomePageState extends State<MealsHomePage> {
   var _selectedMeal = _defaultMealKey();
   var _tabIndex = 0;
   CafeteriaOrder? _order;
+  var _refreshStarted = false;
 
   static String _defaultMealKey() {
     final hour = DateTime.now().hour;
@@ -100,6 +128,7 @@ class _MealsHomePageState extends State<MealsHomePage> {
             }
 
             final data = snapshot.data!;
+            _startBackgroundRefresh();
             final order = _syncOrderWithData(_order!, data);
             final isToday = _isSameDate(
               _selectedDate,
@@ -204,6 +233,27 @@ class _MealsHomePageState extends State<MealsHomePage> {
   Future<void> _saveOrder(CafeteriaOrder nextOrder) async {
     await CafeteriaOrderStore.save(nextOrder);
     setState(() => _order = nextOrder);
+  }
+
+  void _startBackgroundRefresh() {
+    if (_refreshStarted) return;
+    _refreshStarted = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      unawaited(_refreshUpcomingMenus());
+    });
+  }
+
+  Future<void> _refreshUpcomingMenus() async {
+    final today = _dateOnly(DateTime.now());
+    final changed = await AppData.refreshUpcoming(today, days: 7);
+    if (!mounted || !changed) return;
+    final endDate = today.add(const Duration(days: 6));
+    if (_selectedDate.isBefore(today) || _selectedDate.isAfter(endDate)) {
+      return;
+    }
+    setState(() {
+      _dataFuture = AppData.load(_selectedDate);
+    });
   }
 
   CafeteriaOrder _syncOrderWithData(CafeteriaOrder order, AppData data) {
@@ -1209,28 +1259,25 @@ class AppData {
   };
 
   static Future<AppData> load(DateTime date) async {
-    final cafeteriasJson = await rootBundle.loadString(
-      'assets/data/cafeterias.json',
-    );
-    final fixedJson = await rootBundle.loadString(
-      'assets/data/fixed_menus.json',
-    );
     final dateKey = _assetDate(date);
+    final prefs = await SharedPreferences.getInstance();
+    final cafeteriasJson = prefs.getString(_MenuCacheKeys.cafeterias) ?? '[]';
+    final dailyJson = prefs.getString(_MenuCacheKeys.daily(dateKey));
+    final fixedJson = prefs.getString(_MenuCacheKeys.fixed(dateKey));
 
     final cafeterias = (jsonDecode(cafeteriasJson) as List<dynamic>)
         .map((item) => Cafeteria.fromJson(item as Map<String, dynamic>))
         .toList();
     final cafeteriaById = {for (final item in cafeterias) item.id: item};
-    final fixedMenus = (jsonDecode(fixedJson) as List<dynamic>)
-        .map((item) => FixedMenuEntry.fromJson(item as Map<String, dynamic>))
-        .toList();
+    final fixedMenus = fixedJson == null
+        ? const <FixedMenuEntry>[]
+        : (jsonDecode(fixedJson) as List<dynamic>)
+              .map(
+                (item) => FixedMenuEntry.fromJson(item as Map<String, dynamic>),
+              )
+              .toList();
 
-    String dailyJson;
-    try {
-      dailyJson = await rootBundle.loadString(
-        'assets/data/menus/$dateKey.json',
-      );
-    } on FlutterError {
+    if (dailyJson == null) {
       return AppData(
         menuDate: dateKey,
         dailyMenus: const [],
@@ -1243,7 +1290,11 @@ class AppData {
         .map(
           (item) => DailyMenuEntry.fromJson(
             item as Map<String, dynamic>,
-            cafeteriaById[item['cafeteriaId']]!,
+            cafeteriaById[item['cafeteriaId']] ??
+                Cafeteria(
+                  id: item['cafeteriaId'] as String,
+                  name: item['cafeteriaId'] as String,
+                ),
           ),
         )
         .toList();
@@ -1254,6 +1305,63 @@ class AppData {
       fixedMenus: fixedMenus,
     );
   }
+
+  static Future<bool> refreshUpcoming(
+    DateTime startDate, {
+    int days = 7,
+  }) async {
+    if (_menuApiBaseUrl.isEmpty) return false;
+
+    final prefs = await SharedPreferences.getInstance();
+    var changed = false;
+
+    changed |= await _fetchAndCache(
+      prefs,
+      'cafeterias.json',
+      _MenuCacheKeys.cafeterias,
+    );
+    for (var offset = 0; offset < days; offset += 1) {
+      final dateKey = _assetDate(startDate.add(Duration(days: offset)));
+      changed |= await _fetchAndCache(
+        prefs,
+        'menus/$dateKey.json',
+        _MenuCacheKeys.daily(dateKey),
+      );
+      changed |= await _fetchAndCache(
+        prefs,
+        'menus/$dateKey-fixed.json',
+        _MenuCacheKeys.fixed(dateKey),
+      );
+    }
+
+    return changed;
+  }
+
+  static Future<bool> _fetchAndCache(
+    SharedPreferences prefs,
+    String path,
+    String cacheKey,
+  ) async {
+    try {
+      final jsonText = await fetchMenuApiText(_menuApiUri(path));
+      jsonDecode(jsonText);
+      if (prefs.getString(cacheKey) == jsonText) {
+        return false;
+      }
+      await prefs.setString(cacheKey, jsonText);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+}
+
+class _MenuCacheKeys {
+  static const cafeterias = 'menu_cache:cafeterias';
+
+  static String daily(String date) => 'menu_cache:daily:$date';
+
+  static String fixed(String date) => 'menu_cache:fixed:$date';
 }
 
 class CafeteriaOrder {
@@ -1346,12 +1454,7 @@ class CafeteriaOrderStore {
   }
 
   static Future<CafeteriaOrder> _loadDefaultOrder() async {
-    final jsonText = await rootBundle.loadString(
-      'assets/data/default_cafeteria_order.json',
-    );
-    return CafeteriaOrder.fromJson(
-      jsonDecode(jsonText) as Map<String, dynamic>,
-    );
+    return _defaultCafeteriaOrder;
   }
 
   static Future<void> _write(
@@ -1500,6 +1603,13 @@ String _assetDate(DateTime date) {
   return '${date.year.toString().padLeft(4, '0')}-'
       '${date.month.toString().padLeft(2, '0')}-'
       '${date.day.toString().padLeft(2, '0')}';
+}
+
+Uri _menuApiUri(String path) {
+  final base = _menuApiBaseUrl.endsWith('/')
+      ? _menuApiBaseUrl.substring(0, _menuApiBaseUrl.length - 1)
+      : _menuApiBaseUrl;
+  return Uri.parse('$base/$path');
 }
 
 String _dateHeaderLabel(DateTime date) {
