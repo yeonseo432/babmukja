@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -76,12 +77,20 @@ class MealsHomePage extends StatefulWidget {
 
 class _MealsHomePageState extends State<MealsHomePage> {
   late var _selectedDate = _dateOnly(DateTime.now());
-  late Future<AppData> _dataFuture = AppData.load(_selectedDate);
+  late Future<AppData> _dataFuture;
   late final Future<CafeteriaOrder> _orderFuture = CafeteriaOrderStore.load();
+  final _dataByDate = <String, AppData>{};
+  final _refreshingDates = <String>{};
   var _selectedMeal = _defaultMealKey();
   var _tabIndex = 0;
   CafeteriaOrder? _order;
   var _refreshStarted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _dataFuture = _loadDate(_selectedDate, refreshIfMissing: true);
+  }
 
   static String _defaultMealKey() {
     final hour = DateTime.now().hour;
@@ -96,17 +105,43 @@ class _MealsHomePageState extends State<MealsHomePage> {
 
   void _changeDate(int days) {
     final nextDate = _selectedDate.add(Duration(days: days));
-    setState(() {
-      _selectedDate = nextDate;
-      _dataFuture = AppData.load(_selectedDate);
-    });
+    _selectDate(nextDate);
   }
 
   void _goToday() {
+    _selectDate(_dateOnly(DateTime.now()));
+  }
+
+  void _selectDate(DateTime date) {
     setState(() {
-      _selectedDate = _dateOnly(DateTime.now());
-      _dataFuture = AppData.load(_selectedDate);
+      _selectedDate = date;
+      _dataFuture = _loadDate(date, refreshIfMissing: true);
     });
+  }
+
+  Future<AppData> _loadDate(DateTime date, {bool refreshIfMissing = false}) {
+    final dateKey = _assetDate(date);
+    final cached = _dataByDate[dateKey];
+    if (cached != null) {
+      if (refreshIfMissing && !cached.hasLocalData) {
+        unawaited(_refreshDate(date));
+      }
+      return SynchronousFuture(cached);
+    }
+    return _loadDateFromStorage(date, refreshIfMissing: refreshIfMissing);
+  }
+
+  Future<AppData> _loadDateFromStorage(
+    DateTime date, {
+    required bool refreshIfMissing,
+  }) async {
+    final dateKey = _assetDate(date);
+    final data = await AppData.load(date);
+    _dataByDate[dateKey] = data;
+    if (refreshIfMissing && !data.hasLocalData) {
+      unawaited(_refreshDate(date));
+    }
+    return data;
   }
 
   @override
@@ -245,15 +280,29 @@ class _MealsHomePageState extends State<MealsHomePage> {
 
   Future<void> _refreshUpcomingMenus() async {
     final today = _dateOnly(DateTime.now());
-    final changed = await AppData.refreshUpcoming(today, days: 7);
-    if (!mounted || !changed) return;
-    final endDate = today.add(const Duration(days: 6));
-    if (_selectedDate.isBefore(today) || _selectedDate.isAfter(endDate)) {
-      return;
+    await AppData.pruneMenuCache(today);
+    await _refreshDate(today);
+    if (!mounted) return;
+    unawaited(
+      AppData.refreshUpcoming(today.add(const Duration(days: 1)), days: 6),
+    );
+  }
+
+  Future<void> _refreshDate(DateTime date) async {
+    final dateKey = _assetDate(date);
+    if (!_refreshingDates.add(dateKey)) return;
+    try {
+      final changed = await AppData.refreshDate(date);
+      if (!mounted || !changed) return;
+      final data = await AppData.load(date);
+      _dataByDate[dateKey] = data;
+      if (!_isSameDate(_selectedDate, date)) return;
+      setState(() {
+        _dataFuture = SynchronousFuture(data);
+      });
+    } finally {
+      _refreshingDates.remove(dateKey);
     }
-    setState(() {
-      _dataFuture = AppData.load(_selectedDate);
-    });
   }
 
   CafeteriaOrder _syncOrderWithData(CafeteriaOrder order, AppData data) {
@@ -1244,11 +1293,13 @@ class AppData {
     required this.menuDate,
     required this.dailyMenus,
     required this.fixedMenus,
+    required this.hasLocalData,
   });
 
   final String menuDate;
   final List<DailyMenuEntry> dailyMenus;
   final List<FixedMenuEntry> fixedMenus;
+  final bool hasLocalData;
 
   Map<String, String> get dailyNamesById => {
     for (final entry in dailyMenus) entry.cafeteria.id: entry.cafeteria.name,
@@ -1282,6 +1333,7 @@ class AppData {
         menuDate: dateKey,
         dailyMenus: const [],
         fixedMenus: fixedMenus,
+        hasLocalData: fixedJson != null,
       );
     }
 
@@ -1303,6 +1355,7 @@ class AppData {
       menuDate: dailyMap['date'] as String,
       dailyMenus: entries,
       fixedMenus: fixedMenus,
+      hasLocalData: true,
     );
   }
 
@@ -1315,26 +1368,68 @@ class AppData {
     final prefs = await SharedPreferences.getInstance();
     var changed = false;
 
-    changed |= await _fetchAndCache(
-      prefs,
-      'cafeterias.json',
-      _MenuCacheKeys.cafeterias,
-    );
+    changed |= await _fetchCafeterias(prefs);
     for (var offset = 0; offset < days; offset += 1) {
-      final dateKey = _assetDate(startDate.add(Duration(days: offset)));
-      changed |= await _fetchAndCache(
+      changed |= await _fetchDateMenus(
         prefs,
-        'menus/$dateKey.json',
-        _MenuCacheKeys.daily(dateKey),
-      );
-      changed |= await _fetchAndCache(
-        prefs,
-        'menus/$dateKey-fixed.json',
-        _MenuCacheKeys.fixed(dateKey),
+        startDate.add(Duration(days: offset)),
       );
     }
 
     return changed;
+  }
+
+  static Future<bool> refreshDate(DateTime date) async {
+    if (_menuApiBaseUrl.isEmpty) return false;
+
+    final prefs = await SharedPreferences.getInstance();
+    final results = await Future.wait([
+      _fetchCafeterias(prefs),
+      _fetchDateMenus(prefs, date),
+    ]);
+    return results.any((changed) => changed);
+  }
+
+  static Future<bool> _fetchDateMenus(
+    SharedPreferences prefs,
+    DateTime date,
+  ) async {
+    final dateKey = _assetDate(date);
+    final results = await Future.wait([
+      _fetchAndCache(
+        prefs,
+        'menus/$dateKey.json',
+        _MenuCacheKeys.daily(dateKey),
+      ),
+      _fetchAndCache(
+        prefs,
+        'menus/$dateKey-fixed.json',
+        _MenuCacheKeys.fixed(dateKey),
+      ),
+    ]);
+    return results.any((changed) => changed);
+  }
+
+  static Future<void> pruneMenuCache(
+    DateTime anchor, {
+    int pastDays = 14,
+    int futureDays = 14,
+  }) async {
+    final prefs = await SharedPreferences.getInstance();
+    final minDate = anchor.subtract(Duration(days: pastDays));
+    final maxDate = anchor.add(Duration(days: futureDays));
+
+    for (final key in prefs.getKeys()) {
+      final date = _MenuCacheKeys.dateFromMenuKey(key);
+      if (date == null) continue;
+      if (date.isBefore(minDate) || date.isAfter(maxDate)) {
+        await prefs.remove(key);
+      }
+    }
+  }
+
+  static Future<bool> _fetchCafeterias(SharedPreferences prefs) {
+    return _fetchAndCache(prefs, 'cafeterias.json', _MenuCacheKeys.cafeterias);
   }
 
   static Future<bool> _fetchAndCache(
@@ -1362,6 +1457,24 @@ class _MenuCacheKeys {
   static String daily(String date) => 'menu_cache:daily:$date';
 
   static String fixed(String date) => 'menu_cache:fixed:$date';
+
+  static DateTime? dateFromMenuKey(String key) {
+    const dailyPrefix = 'menu_cache:daily:';
+    const fixedPrefix = 'menu_cache:fixed:';
+    final dateText = key.startsWith(dailyPrefix)
+        ? key.substring(dailyPrefix.length)
+        : key.startsWith(fixedPrefix)
+        ? key.substring(fixedPrefix.length)
+        : null;
+    if (dateText == null) return null;
+    try {
+      final parts = dateText.split('-').map(int.parse).toList();
+      if (parts.length != 3) return null;
+      return DateTime(parts[0], parts[1], parts[2]);
+    } catch (_) {
+      return null;
+    }
+  }
 }
 
 class CafeteriaOrder {
