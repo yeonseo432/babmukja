@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-03",
-  "updatedAt": "2026-06-02T19:16:38+09:00",
+  "updatedAt": "2026-06-02T20:32:11+09:00",
   "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-06-03&orderby=DESC",
   "cafeterias": [
     {
@@ -421,15 +421,10 @@
           "rawText": "세미양식부페 : 5,000원\n\n그린스프/얼큰콩나물국,물만두깐풍,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
           "sections": [
             {
-              "title": "general",
-              "price": null,
-              "rawText": "세미양식부페 : 5,000원\n그린스프/얼큰콩나물국,물만두깐풍,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "그린스프/얼큰콩나물국,물만두깐풍,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
               "items": [
-                {
-                  "name": "세미양식부페",
-                  "price": 5000,
-                  "tags": []
-                },
                 {
                   "name": "그린스프/얼큰콩나물국,물만두깐풍,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
                   "price": null,
@@ -506,9 +501,5 @@
         }
       }
     }
-  ],
-  "sourceUrls": {
-    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-06-03&orderby=DESC",
-    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-06-03&orderby=DESC"
-  }
+  ]
 }
