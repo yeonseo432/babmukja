@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-05-30",
+  "updatedAt": "2026-06-02T19:47:01+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-05-30&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "student_center",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "사골모듬왕만두국 : 6,500원\n\n※ 운영시간 : 11:30~14:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "사골모듬왕만두국 : 6,500원",
+              "items": [
+                {
+                  "name": "사골모듬왕만두국",
+                  "price": 6500,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "14:00"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "눈꽃치즈닭갈비 : 6,500원\n\n※ 운영시간 : 17:00~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "눈꽃치즈닭갈비 : 6,500원",
+              "items": [
+                {
+                  "name": "눈꽃치즈닭갈비",
+                  "price": 6500,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:00",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n당근스프/아욱국,잡채말이어묵조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "세미양식부페 : 5,000원\n당근스프/아욱국,잡채말이어묵조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "세미양식부페",
+                  "price": 5000,
+                  "tags": []
+                },
+                {
+                  "name": "당근스프/아욱국,잡채말이어묵조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "자작냉우동&왕만두찜 : 6,000원\n\n(잇템)소떡소떡 : 2,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "자작냉우동&왕만두찜 : 6,000원\n(잇템)소떡소떡 : 2,000원",
+              "items": [
+                {
+                  "name": "자작냉우동&왕만두찜",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)소떡소떡",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "뚝배기불고기*당면사리&매콤야채전 : 6,000원\n\n(잇템)후라이드치킨 : 4,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "뚝배기불고기*당면사리&매콤야채전 : 6,000원\n(잇템)후라이드치킨 : 4,000원",
+              "items": [
+                {
+                  "name": "뚝배기불고기*당면사리&매콤야채전",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)후라이드치킨",
+                  "price": 4000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-05-30&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-05-30&orderby=DESC"
+  }
+}

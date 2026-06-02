@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-05-29",
-  "updatedAt": "2026-05-29T00:00:18+09:00",
+  "updatedAt": "2026-06-02T19:46:39+09:00",
   "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-05-29&orderby=DESC",
   "cafeterias": [
     {
@@ -973,5 +973,9 @@
         }
       }
     }
-  ]
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-05-29&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-05-29&orderby=DESC"
+  }
 }
