@@ -89,7 +89,7 @@ class _MealsHomePageState extends State<MealsHomePage> {
   @override
   void initState() {
     super.initState();
-    _dataFuture = _loadDate(_selectedDate, refreshIfMissing: true);
+    _dataFuture = _loadDate(_selectedDate);
   }
 
   static String _defaultMealKey() {
@@ -280,12 +280,30 @@ class _MealsHomePageState extends State<MealsHomePage> {
 
   Future<void> _refreshUpcomingMenus() async {
     final today = _dateOnly(DateTime.now());
+    final todayKey = _assetDate(today);
     await AppData.pruneMenuCache(today);
-    await _refreshDate(today);
+    final changed = await AppData.refreshBundle(today);
     if (!mounted) return;
-    unawaited(
-      AppData.refreshUpcoming(today.add(const Duration(days: 1)), days: 6),
-    );
+
+    if (changed) {
+      for (var offset = 0; offset < 7; offset += 1) {
+        _dataByDate.remove(_assetDate(today.add(Duration(days: offset))));
+      }
+      final endDate = today.add(const Duration(days: 6));
+      if (!_selectedDate.isBefore(today) && !_selectedDate.isAfter(endDate)) {
+        final data = await AppData.load(_selectedDate);
+        if (!mounted) return;
+        _dataByDate[_assetDate(_selectedDate)] = data;
+        setState(() {
+          _dataFuture = SynchronousFuture(data);
+        });
+      }
+      return;
+    }
+
+    if (_dataByDate[todayKey]?.hasLocalData != true) {
+      await _refreshDate(today);
+    }
   }
 
   Future<void> _refreshDate(DateTime date) async {
@@ -1379,6 +1397,50 @@ class AppData {
     return changed;
   }
 
+  static Future<bool> refreshBundle(DateTime startDate) async {
+    if (_menuApiBaseUrl.isEmpty) return false;
+
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final startDateKey = _assetDate(startDate);
+      final bundleText = await fetchMenuApiText(
+        _menuApiUri('bundles/$startDateKey-7d.json'),
+      );
+      final bundle = jsonDecode(bundleText) as Map<String, dynamic>;
+      var changed = false;
+
+      final cafeteriasJson = jsonEncode(bundle['cafeterias'] ?? const []);
+      changed |= await _writeCacheText(
+        prefs,
+        _MenuCacheKeys.cafeterias,
+        cafeteriasJson,
+      );
+
+      final menus = bundle['menus'] as Map<String, dynamic>? ?? const {};
+      for (final entry in menus.entries) {
+        changed |= await _writeCacheText(
+          prefs,
+          _MenuCacheKeys.daily(entry.key),
+          jsonEncode(entry.value),
+        );
+      }
+
+      final fixedMenus =
+          bundle['fixedMenus'] as Map<String, dynamic>? ?? const {};
+      for (final entry in fixedMenus.entries) {
+        changed |= await _writeCacheText(
+          prefs,
+          _MenuCacheKeys.fixed(entry.key),
+          jsonEncode(entry.value),
+        );
+      }
+
+      return changed;
+    } catch (_) {
+      return false;
+    }
+  }
+
   static Future<bool> refreshDate(DateTime date) async {
     if (_menuApiBaseUrl.isEmpty) return false;
 
@@ -1440,14 +1502,22 @@ class AppData {
     try {
       final jsonText = await fetchMenuApiText(_menuApiUri(path));
       jsonDecode(jsonText);
-      if (prefs.getString(cacheKey) == jsonText) {
-        return false;
-      }
-      await prefs.setString(cacheKey, jsonText);
-      return true;
+      return _writeCacheText(prefs, cacheKey, jsonText);
     } catch (_) {
       return false;
     }
+  }
+
+  static Future<bool> _writeCacheText(
+    SharedPreferences prefs,
+    String cacheKey,
+    String jsonText,
+  ) async {
+    if (prefs.getString(cacheKey) == jsonText) {
+      return false;
+    }
+    await prefs.setString(cacheKey, jsonText);
+    return true;
   }
 }
 

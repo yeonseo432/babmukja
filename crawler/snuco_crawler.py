@@ -748,6 +748,57 @@ def cleanup_raw(raw_dir: Path, target_dates: set[str]) -> list[str]:
     return removed
 
 
+def cleanup_bundles(bundle_dir: Path, keep_start_date: str) -> list[str]:
+    removed = []
+    if not bundle_dir.exists():
+        return removed
+    keep_name = f"{keep_start_date}-7d.json"
+    for path in bundle_dir.glob("*-7d.json"):
+        if path.name != keep_name:
+            path.unlink()
+            removed.append(str(path))
+    return removed
+
+
+def build_bundle(output_dir: Path, cafeterias_path: Path, start_date: str, target_dates: list[str]) -> dict:
+    menus = {}
+    fixed_menus = {}
+    for date in target_dates:
+        daily_path = output_dir / f"{date}.json"
+        fixed_path = output_dir / f"{date}-fixed.json"
+        if daily_path.exists():
+            menus[date] = json.loads(daily_path.read_text(encoding="utf-8"))
+        if fixed_path.exists():
+            fixed_menus[date] = json.loads(fixed_path.read_text(encoding="utf-8"))
+
+    return {
+        "schemaVersion": 1,
+        "startDate": start_date,
+        "days": len(target_dates),
+        "generatedAt": datetime.now(KST).isoformat(timespec="seconds"),
+        "cafeterias": load_json(cafeterias_path, []),
+        "menus": menus,
+        "fixedMenus": fixed_menus,
+    }
+
+
+def equivalent_bundle(existing: dict, next_bundle: dict) -> bool:
+    existing_copy = dict(existing)
+    next_copy = dict(next_bundle)
+    existing_copy.pop("generatedAt", None)
+    next_copy.pop("generatedAt", None)
+    return existing_copy == next_copy
+
+
+def write_bundle_if_changed(path: Path, bundle: dict) -> bool:
+    if path.exists():
+        existing = json.loads(path.read_text(encoding="utf-8"))
+        if equivalent_bundle(existing, bundle):
+            return False
+    write_json(path, bundle)
+    return True
+
+
 def validate_outputs(output_dir: Path, cafeterias_path: Path, target_dates: list[str]) -> list[str]:
     errors = []
     cafeterias = load_json(cafeterias_path, [])
@@ -784,6 +835,7 @@ def main() -> None:
     parser.add_argument("--days", type=int, default=1)
     parser.add_argument("--output-dir", default="data/menus")
     parser.add_argument("--cafeterias-path", default="data/cafeterias.json")
+    parser.add_argument("--bundle-dir", default="data/bundles")
     parser.add_argument("--raw-dir", default="data/raw")
     parser.add_argument("--crawl-runs-dir", default="data/crawl_runs")
     parser.add_argument("--request-delay-seconds", type=float, default=8)
@@ -832,6 +884,7 @@ def main() -> None:
         "generatedFiles": [],
         "unchangedDates": [],
         "removedRawFiles": [],
+        "removedBundleFiles": [],
         "validationErrors": [],
     }
 
@@ -841,11 +894,21 @@ def main() -> None:
         crawl_date(args, target_date, run_log)
 
     run_log["removedRawFiles"] = cleanup_raw(Path(args.raw_dir), set(target_dates))
+    run_log["removedBundleFiles"] = cleanup_bundles(Path(args.bundle_dir), target_dates[0])
     run_log["validationErrors"] = validate_outputs(
         Path(args.output_dir),
         Path(args.cafeterias_path),
         target_dates,
     )
+    bundle_path = Path(args.bundle_dir) / f"{target_dates[0]}-7d.json"
+    bundle = build_bundle(
+        Path(args.output_dir),
+        Path(args.cafeterias_path),
+        target_dates[0],
+        target_dates,
+    )
+    if write_bundle_if_changed(bundle_path, bundle):
+        run_log["generatedFiles"].append(str(bundle_path))
     run_log["finishedAt"] = datetime.now(KST).isoformat(timespec="seconds")
 
     log_path = Path(args.crawl_runs_dir) / f"{run_log['runDate']}.json"

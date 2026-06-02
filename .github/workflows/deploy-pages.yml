@@ -44,6 +44,9 @@ jobs:
           mkdir -p app/build/web/data
           cp data/cafeterias.json app/build/web/data/cafeterias.json
           cp -R data/menus app/build/web/data/menus
+          if [ -d data/bundles ]; then
+            cp -R data/bundles app/build/web/data/bundles
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
