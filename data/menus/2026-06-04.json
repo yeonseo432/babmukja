@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "date": "2026-06-04",
-  "updatedAt": "2026-06-02T19:16:59+09:00",
+  "updatedAt": "2026-06-02T20:32:11+09:00",
   "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-06-04&orderby=DESC",
   "cafeterias": [
     {
@@ -906,15 +906,10 @@
           "rawText": "세미양식부페 : 5,000원\n\n감자스프/들깨탕,팝콘치킨,스크램블에그,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
           "sections": [
             {
-              "title": "general",
-              "price": null,
-              "rawText": "세미양식부페 : 5,000원\n감자스프/들깨탕,팝콘치킨,스크램블에그,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "감자스프/들깨탕,팝콘치킨,스크램블에그,토스트,씨리얼, 흰우유/두유,그린샐러드",
               "items": [
-                {
-                  "name": "세미양식부페",
-                  "price": 5000,
-                  "tags": []
-                },
                 {
                   "name": "감자스프/들깨탕,팝콘치킨,스크램블에그,토스트,씨리얼, 흰우유/두유,그린샐러드",
                   "price": null,
@@ -1001,9 +996,5 @@
         }
       }
     }
-  ],
-  "sourceUrls": {
-    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-06-04&orderby=DESC",
-    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-06-04&orderby=DESC"
-  }
+  ]
 }
