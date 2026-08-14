@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-15",
+  "updatedAt": "2026-08-15T00:58:02+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-08-15&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n감자스프/무채어묵국,두부강정,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "감자스프/무채어묵국,두부강정,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "감자스프/무채어묵국,두부강정,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "잔치국수&마늘바삭치킨강정 : 6,000원\n\n(잇템)갈비만두찜 : 2,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "잔치국수&마늘바삭치킨강정 : 6,000원\n(잇템)갈비만두찜 : 2,000원",
+              "items": [
+                {
+                  "name": "잔치국수&마늘바삭치킨강정",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)갈비만두찜",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "제육장조림버터비빔밥*계란후라이&옥수수크로켓 : 6,000원\n\n(잇템)소떡소떡 : 2,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "제육장조림버터비빔밥*계란후라이&옥수수크로켓 : 6,000원\n(잇템)소떡소떡 : 2,000원",
+              "items": [
+                {
+                  "name": "제육장조림버터비빔밥*계란후라이&옥수수크로켓",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)소떡소떡",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-08-15&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-08-15&orderby=DESC"
+  }
+}
