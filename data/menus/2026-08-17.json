@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-17",
+  "updatedAt": "2026-08-15T00:58:48+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-08-17&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "student_center",
+      "meals": {
+        "breakfast": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dure_midam",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dongwon",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "광복절 대체공휴일",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "광복절 대체공휴일",
+              "items": [
+                {
+                  "name": "광복절 대체공휴일",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "라면사리모듬햄부대찌개&생선까스 : 6,000원\n\n※ 운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "라면사리모듬햄부대찌개&생선까스 : 6,000원",
+              "items": [
+                {
+                  "name": "라면사리모듬햄부대찌개&생선까스",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "제육쭈꾸미볶음 : 6,000원\n\n※ 운영시간 : 17:30~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "제육쭈꾸미볶음 : 6,000원",
+              "items": [
+                {
+                  "name": "제육쭈꾸미볶음",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "third_cafeteria",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "third_cafeteria",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_302",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_301",
+      "meals": {
+        "breakfast": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n그린스프/열무된장국,미니돈까스케찹조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "그린스프/열무된장국,미니돈까스케찹조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "그린스프/열무된장국,미니돈까스케찹조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "숯불고기옥수수비빔밥&생선까스 : 6,000원\n\n(잇템)새우튀김 : 3,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "숯불고기옥수수비빔밥&생선까스 : 6,000원\n(잇템)새우튀김 : 3,000원",
+              "items": [
+                {
+                  "name": "숯불고기옥수수비빔밥&생선까스",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)새우튀김",
+                  "price": 3000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "양지육개장&떡고기산적 : 6,000원\n\n(잇템)고구마치즈고로케 : 2,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "양지육개장&떡고기산적 : 6,000원\n(잇템)고구마치즈고로케 : 2,000원",
+              "items": [
+                {
+                  "name": "양지육개장&떡고기산적",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)고구마치즈고로케",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-08-17&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-08-17&orderby=DESC"
+  }
+}
