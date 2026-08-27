@@ -737,7 +737,15 @@ def parse_successful_sources(date: str, source_statuses: dict, raw_dir: Path) ->
             continue
         _, parser, source_url = source_config(source, date)
         html = (raw_dir / source / f"{date}.html").read_text(encoding="utf-8")
-        rows.extend(parser(html))
+        try:
+            parsed = parser(html)
+        except ValueError as exc:
+            # 아직 식단이 안 올라온 날짜이거나 차단 페이지가 온 경우다.
+            # 이 소스만 실패로 기록하고 나머지 날짜는 계속 돈다.
+            status["status"] = "failed"
+            status["error"] = f"parse failed: {exc}"
+            continue
+        rows.extend(parsed)
         source_urls[source] = source_url
     return rows, source_urls
 
@@ -765,6 +773,10 @@ def crawl_date(args, date: str, run_log: dict) -> None:
         return
 
     rows, source_urls = parse_successful_sources(date, source_statuses, raw_dir)
+    if "snuco" not in source_urls:
+        # 본 식단표를 못 읽으면 기숙사 행만 남아 기존 파일을 빈 내용으로 덮어쓰게 된다.
+        return
+
     payload, cafeterias, fixed_entries = build_payload(date, source_urls.get("snuco", ""), rows)
     payload["sourceUrls"] = source_urls
 
