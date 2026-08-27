@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-30",
+  "updatedAt": "2026-08-28T01:12:02+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-08-30&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "불고기덮밥 : 6,000원\n\n※ 운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "불고기덮밥 : 6,000원",
+              "items": [
+                {
+                  "name": "불고기덮밥",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "통마늘부추제육볶음 : 6,000원\n\n※ 운영시간 : 17:30~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "통마늘부추제육볶음 : 6,000원",
+              "items": [
+                {
+                  "name": "통마늘부추제육볶음",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n그린스프/수제비국,알감자버터구이,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "그린스프/수제비국,알감자버터구이,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "그린스프/수제비국,알감자버터구이,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "뚝배기불고기*당면사리&옥수수전 : 6,000원\n\n(잇템)멘보샤*스윗칠리소스 : 4,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "뚝배기불고기*당면사리&옥수수전 : 6,000원\n(잇템)멘보샤*스윗칠리소스 : 4,000원",
+              "items": [
+                {
+                  "name": "뚝배기불고기*당면사리&옥수수전",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)멘보샤*스윗칠리소스",
+                  "price": 4000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "참치김치찌개*라면사리&고기완자조림 : 6,000원\n\n(잇템)순살햄후라이 : 2,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "참치김치찌개*라면사리&고기완자조림 : 6,000원\n(잇템)순살햄후라이 : 2,000원",
+              "items": [
+                {
+                  "name": "참치김치찌개*라면사리&고기완자조림",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)순살햄후라이",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ]
+}
