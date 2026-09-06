@@ -1,0 +1,169 @@
+{
+  "runDate": "2026-09-07",
+  "startedAt": "2026-09-07T02:53:43+09:00",
+  "targetDates": [
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13"
+  ],
+  "sources": {
+    "2026-09-07": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-07&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-07.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-07&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-07.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    },
+    "2026-09-08": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-08&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-08.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-08&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-08.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    },
+    "2026-09-09": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-09&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-09.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-09&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-09.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    },
+    "2026-09-10": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-10&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-10.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-10&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-10.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    },
+    "2026-09-11": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-11&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-11.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-11&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-11.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    },
+    "2026-09-12": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-12&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-12.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-12&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-12.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    },
+    "2026-09-13": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-13&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-13.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-13&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-13.html",
+        "changed": true,
+        "error": "parse failed: menu-table not found"
+      }
+    }
+  },
+  "newCafeterias": [],
+  "metadataChanges": [],
+  "generatedFiles": [
+    "data/bundles/2026-09-07-7d.json"
+  ],
+  "unchangedDates": [],
+  "removedRawFiles": [
+    "data/raw/snuco/2026-08-18.html",
+    "data/raw/snuco/2026-08-19.html",
+    "data/raw/snuco/2026-08-31.html",
+    "data/raw/snuco/2026-08-15.html",
+    "data/raw/snuco/2026-09-03.html",
+    "data/raw/snuco/2026-08-30.html",
+    "data/raw/snuco/2026-08-21.html",
+    "data/raw/snuco/2026-09-01.html",
+    "data/raw/snuco/2026-08-16.html",
+    "data/raw/snuco/2026-09-02.html",
+    "data/raw/snuco/2026-08-28.html",
+    "data/raw/snuco/2026-08-29.html",
+    "data/raw/snuco/2026-08-17.html",
+    "data/raw/snuco/2026-08-20.html",
+    "data/raw/dorm/2026-08-18.html",
+    "data/raw/dorm/2026-08-19.html",
+    "data/raw/dorm/2026-08-31.html",
+    "data/raw/dorm/2026-08-15.html",
+    "data/raw/dorm/2026-09-03.html",
+    "data/raw/dorm/2026-08-30.html",
+    "data/raw/dorm/2026-08-21.html",
+    "data/raw/dorm/2026-09-01.html",
+    "data/raw/dorm/2026-08-16.html",
+    "data/raw/dorm/2026-09-02.html",
+    "data/raw/dorm/2026-08-28.html",
+    "data/raw/dorm/2026-08-29.html",
+    "data/raw/dorm/2026-08-17.html",
+    "data/raw/dorm/2026-08-20.html"
+  ],
+  "removedBundleFiles": [
+    "data/bundles/2026-08-28-7d.json",
+    "data/bundles/2026-08-15-7d.json"
+  ],
+  "validationErrors": [],
+  "finishedAt": "2026-09-07T02:56:04+09:00"
+}
