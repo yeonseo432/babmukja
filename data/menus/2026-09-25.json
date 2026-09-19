@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-25",
+  "updatedAt": "2026-09-20T02:56:54+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-25&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "student_center",
+      "meals": {
+        "breakfast": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "jahayeon_3f",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "jahayeon_2f",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dongwon",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "버섯불고기 : 6,000원\n\n※ 운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "버섯불고기 : 6,000원",
+              "items": [
+                {
+                  "name": "버섯불고기",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "직화오징어덮밥(#) : 6,000원\n\n※ 운영시간 : 17:30~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "직화오징어덮밥(#) : 6,000원",
+              "items": [
+                {
+                  "name": "직화오징어덮밥",
+                  "price": 6000,
+                  "tags": [
+                    "NO_MEAT"
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "third_cafeteria",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_302",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_301",
+      "meals": {
+        "breakfast": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-25&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-25&orderby=DESC"
+  }
+}
