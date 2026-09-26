@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-27",
+  "updatedAt": "2026-09-27T03:52:25+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-27&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "추석연휴 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 휴무",
+              "items": [
+                {
+                  "name": "추석연휴 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "추석연휴 미운영",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "추석연휴 미운영",
+              "items": [
+                {
+                  "name": "추석연휴 미운영",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "잔치국수&마늘바삭치킨강정 : 6,000원\n\n(잇템)갈비만두찜: 2,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "잔치국수&마늘바삭치킨강정 : 6,000원\n(잇템)갈비만두찜: 2,000원",
+              "items": [
+                {
+                  "name": "잔치국수&마늘바삭치킨강정",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)갈비만두찜",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "제육버섯불고기&호박두부된장국 : 6,000원\n\n(잇템)후라이드치킨 : 4,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "제육버섯불고기&호박두부된장국 : 6,000원\n(잇템)후라이드치킨 : 4,000원",
+              "items": [
+                {
+                  "name": "제육버섯불고기&호박두부된장국",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)후라이드치킨",
+                  "price": 4000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-27&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-27&orderby=DESC"
+  }
+}
