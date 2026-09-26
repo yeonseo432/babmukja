@@ -1,0 +1,169 @@
+{
+  "runDate": "2026-09-27",
+  "startedAt": "2026-09-27T03:52:13+09:00",
+  "targetDates": [
+    "2026-09-27",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03"
+  ],
+  "sources": {
+    "2026-09-27": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-27&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-27.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-27&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-27.html",
+        "changed": true
+      }
+    },
+    "2026-09-28": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-28&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-28.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-28&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-28.html",
+        "changed": true
+      }
+    },
+    "2026-09-29": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-29&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-29.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-29&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-29.html",
+        "changed": true
+      }
+    },
+    "2026-09-30": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-09-30&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-09-30.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-09-30&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-09-30.html",
+        "changed": true
+      }
+    },
+    "2026-10-01": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-01&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-10-01.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-01&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-10-01.html",
+        "changed": true
+      }
+    },
+    "2026-10-02": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-02&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-10-02.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-02&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-10-02.html",
+        "changed": true
+      }
+    },
+    "2026-10-03": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-03&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-10-03.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-03&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-10-03.html",
+        "changed": true
+      }
+    }
+  },
+  "newCafeterias": [],
+  "metadataChanges": [],
+  "generatedFiles": [
+    "data/menus/2026-09-27.json",
+    "data/menus/2026-09-27-fixed.json",
+    "data/menus/2026-09-28.json",
+    "data/menus/2026-09-28-fixed.json",
+    "data/menus/2026-09-29.json",
+    "data/menus/2026-09-29-fixed.json",
+    "data/menus/2026-09-30.json",
+    "data/menus/2026-09-30-fixed.json",
+    "data/menus/2026-10-01.json",
+    "data/menus/2026-10-01-fixed.json",
+    "data/menus/2026-10-02.json",
+    "data/menus/2026-10-02-fixed.json",
+    "data/menus/2026-10-03.json",
+    "data/menus/2026-10-03-fixed.json",
+    "data/bundles/2026-09-27-7d.json"
+  ],
+  "unchangedDates": [],
+  "removedRawFiles": [
+    "data/raw/snuco/2026-08-15.html",
+    "data/raw/snuco/2026-09-01.html",
+    "data/raw/snuco/2026-08-16.html",
+    "data/raw/snuco/2026-08-17.html",
+    "data/raw/snuco/2026-08-31.html",
+    "data/raw/snuco/2026-09-02.html",
+    "data/raw/snuco/2026-08-29.html",
+    "data/raw/snuco/2026-08-20.html",
+    "data/raw/snuco/2026-09-03.html",
+    "data/raw/snuco/2026-08-21.html",
+    "data/raw/snuco/2026-08-28.html",
+    "data/raw/snuco/2026-08-19.html",
+    "data/raw/snuco/2026-08-18.html",
+    "data/raw/snuco/2026-08-30.html",
+    "data/raw/dorm/2026-08-15.html",
+    "data/raw/dorm/2026-09-01.html",
+    "data/raw/dorm/2026-08-16.html",
+    "data/raw/dorm/2026-08-17.html",
+    "data/raw/dorm/2026-08-31.html",
+    "data/raw/dorm/2026-09-02.html",
+    "data/raw/dorm/2026-08-29.html",
+    "data/raw/dorm/2026-08-20.html",
+    "data/raw/dorm/2026-09-03.html",
+    "data/raw/dorm/2026-08-21.html",
+    "data/raw/dorm/2026-08-28.html",
+    "data/raw/dorm/2026-08-19.html",
+    "data/raw/dorm/2026-08-18.html",
+    "data/raw/dorm/2026-08-30.html"
+  ],
+  "removedBundleFiles": [
+    "data/bundles/2026-08-28-7d.json",
+    "data/bundles/2026-08-15-7d.json"
+  ],
+  "validationErrors": [],
+  "finishedAt": "2026-09-27T03:54:54+09:00"
+}
