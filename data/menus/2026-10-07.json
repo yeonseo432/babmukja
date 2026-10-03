@@ -1,0 +1,993 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-07",
+  "updatedAt": "2026-10-04T03:55:27+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-07&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "student_center",
+      "meals": {
+        "breakfast": {
+          "rawText": "차돌된장죽 : 3,000원\n\n※ 운영시간 : 08:00~10:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "차돌된장죽 : 3,000원",
+              "items": [
+                {
+                  "name": "차돌된장죽",
+                  "price": 1000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "10:00"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "오코노미온더치킨까스 : 6,500원\n\n제육감자고추장찌개 : 3,000원\n\n갈비탕 : 6,000원\n\n※ 운영시간 : 11:00~14:30\n\n※ 혼잡시간 : 11:50~12:20",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "오코노미온더치킨까스 : 6,500원\n제육감자고추장찌개 : 3,000원\n갈비탕 : 6,000원",
+              "items": [
+                {
+                  "name": "오코노미온더치킨까스",
+                  "price": 6500,
+                  "tags": []
+                },
+                {
+                  "name": "제육감자고추장찌개",
+                  "price": 1000,
+                  "tags": []
+                },
+                {
+                  "name": "갈비탕",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:00",
+            "end": "14:30"
+          },
+          "busyHours": {
+            "start": "11:50",
+            "end": "12:20"
+          },
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "매운갈비떡찜 : 6,000원\n\n두부버섯탕수(#) : 3,000원\n\n※ 운영시간 : 17:00~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "매운갈비떡찜 : 6,000원\n두부버섯탕수(#) : 3,000원",
+              "items": [
+                {
+                  "name": "매운갈비떡찜",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "두부버섯탕수",
+                  "price": 1000,
+                  "tags": [
+                    "NO_MEAT"
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:00",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "jahayeon_3f",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "뚝배기추어탕(#) : 13,000원\n\n단호박닭찜 : 13,000원\n\n<+세미뷔페>\n\n배도라지실파무침\n\n잡채\n\n그린샐러드\n\n배추된장국\n\n후식\n\n<뷔페 특성상 메뉴의 조기품절\n\n가능성이 있으니 양해 부탁드립니다>\n\n※ 운영시간 : 11:30~14:00\n\n※ 혼잡시간 : 11:30~12:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "뚝배기추어탕(#) : 13,000원\n단호박닭찜 : 13,000원",
+              "items": [
+                {
+                  "name": "뚝배기추어탕",
+                  "price": 13000,
+                  "tags": [
+                    "NO_MEAT"
+                  ]
+                },
+                {
+                  "name": "단호박닭찜",
+                  "price": 13000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "title": "세미뷔페",
+              "price": null,
+              "rawText": "배도라지실파무침\n잡채\n그린샐러드\n배추된장국\n후식",
+              "items": [
+                {
+                  "name": "배도라지실파무침",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "잡채",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "그린샐러드",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "배추된장국",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "후식",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "14:00"
+          },
+          "busyHours": {
+            "start": "11:30",
+            "end": "12:30"
+          },
+          "notes": [
+            "※ 뷔페 특성상 메뉴의 조기품절 가능성이 있으니 양해 부탁드립니다"
+          ]
+        },
+        "dinner": {
+          "rawText": "※ 저녁 단체예약문의: 02-880-7889",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": [
+            "※ 저녁 단체예약문의: 02-880-7889"
+          ]
+        }
+      }
+    },
+    {
+      "cafeteriaId": "jahayeon_2f",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "차돌된장찌개 : 5,500원\n\n미나리쭈삼볶음 : 6,000원\n\n※ 운영시간 : 11:30~14:00\n\n※ 혼잡시간 : 11:50~12:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "차돌된장찌개 : 5,500원\n미나리쭈삼볶음 : 6,000원",
+              "items": [
+                {
+                  "name": "차돌된장찌개",
+                  "price": 5500,
+                  "tags": []
+                },
+                {
+                  "name": "미나리쭈삼볶음",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "14:00"
+          },
+          "busyHours": {
+            "start": "11:50",
+            "end": "12:30"
+          },
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "오므라이스 : 6,000원\n\n※ 운영시간 : 17:00~18:30\n\n※ 혼잡시간 : 17:50~18:20",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "오므라이스 : 6,000원",
+              "items": [
+                {
+                  "name": "오므라이스",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:00",
+            "end": "18:30"
+          },
+          "busyHours": {
+            "start": "17:50",
+            "end": "18:20"
+          },
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "arts_cafeteria",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "<A코너>철판)눈꽃치즈김치볶음밥, 고사리오일파스타, 어묵볶음 : 6,500원\n\n※ 운영시간 : 11:30 ~ 14:00\n\n<B코너>에비동, 미트볼감자조림, 모닝빵*딸기잼 : 6,000원\n\n※ 운영시간 : 11:30 ~ 13:00\n\n<C코너>셀프라면,밥,김치 : 3,000원",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "철판)눈꽃치즈김치볶음밥, 고사리오일파스타, 어묵볶음 : 6,500원\n에비동, 미트볼감자조림, 모닝빵*딸기잼 : 6,000원\n셀프라면,밥,김치 : 3,000원",
+              "items": [
+                {
+                  "name": "철판)눈꽃치즈김치볶음밥, 고사리오일파스타, 어묵볶음",
+                  "price": 6500,
+                  "tags": []
+                },
+                {
+                  "name": "에비동, 미트볼감자조림, 모닝빵*딸기잼",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "셀프라면,밥,김치",
+                  "price": 3000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "14:00"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "뚝배기)바지락된장찌개, 고기메밀전병, 고추장비엔나볶음 : 6,000원\n\n※ 운영시간 : 17:00 ~ 18:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "뚝배기)바지락된장찌개, 고기메밀전병, 고추장비엔나볶음 : 6,000원",
+              "items": [
+                {
+                  "name": "뚝배기)바지락된장찌개, 고기메밀전병, 고추장비엔나볶음",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:00",
+            "end": "18:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dure_midam",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "<셀프코너> 7,000원\n\n잡곡밥\n\n시래기된장국\n\n마늘보쌈\n\n시즈닝팝콘치킨\n\n비빔막국수\n\n무말랭이무침\n\n포기김치\n\n그린샐러드\n\n오늘의차\n\n<주문식 메뉴>\n\n고등어 소금구이  : 14,000원\n\n철판주꾸미 볶음 : 15,000원\n\n철판제육볶음 : 15,000원\n\n떡갈비 구이 : 16,000원\n\n소갈비탕  : 19,000원\n\n7선 산채비빔밥 : 16,000원\n\n소불고기뚝배기 : 15,000원\n\n차돌순두부 : 12,000원\n\n육짬뽕 : 12,000원\n\n솥밥(추가) : 2,000원\n\n※운영시간 : 11:00~14:00\n\n※혼잡시간 : 12:00~12:30",
+          "sections": [
+            {
+              "title": "셀프코너",
+              "price": 7000,
+              "rawText": "잡곡밥\n시래기된장국\n마늘보쌈\n시즈닝팝콘치킨\n비빔막국수\n무말랭이무침\n포기김치\n그린샐러드\n오늘의차",
+              "items": [
+                {
+                  "name": "잡곡밥",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "시래기된장국",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "마늘보쌈",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "시즈닝팝콘치킨",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "비빔막국수",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "무말랭이무침",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "포기김치",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "그린샐러드",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "오늘의차",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:00",
+            "end": "14:00"
+          },
+          "busyHours": {
+            "start": "12:00",
+            "end": "12:30"
+          },
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "<셀프코너> 7,000원\n\n잡곡밥\n\n가쓰오어묵국\n\n불고기마라샹궈\n\n모듬고로케*소스\n\n타카나즈케무침\n\n통식빵허니브레드\n\n포기김치\n\n그린샐러드\n\n오늘의차\n\n<주문식 메뉴>\n\n고등어 소금구이  : 14,000원\n\n철판주꾸미 볶음 : 15,000원\n\n철판제육볶음 : 15,000원\n\n떡갈비 구이 : 16,000원\n\n소갈비탕  : 19,000원\n\n7선 산채비빔밥 : 16,000원\n\n소불고기뚝배기 : 15,000원\n\n차돌순두부 : 12,000원\n\n육짬뽕 : 12,000원\n\n솥밥(추가) : 2,000원\n\n※운영시간 : 17:00~19:00\n\n※주문식 라스트 오더 : 19:15",
+          "sections": [
+            {
+              "title": "셀프코너",
+              "price": 7000,
+              "rawText": "잡곡밥\n가쓰오어묵국\n불고기마라샹궈\n모듬고로케*소스\n타카나즈케무침\n통식빵허니브레드\n포기김치\n그린샐러드\n오늘의차",
+              "items": [
+                {
+                  "name": "잡곡밥",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "가쓰오어묵국",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "불고기마라샹궈",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "모듬고로케*소스",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "타카나즈케무침",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "통식빵허니브레드",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "포기김치",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "그린샐러드",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "오늘의차",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:00",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dongwon",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "모듬햄부대찌개 : 5,500원\n\n불고기&우렁쌈밥 : 6,000원\n\n※ 운영시간 : 11:00~14:00\n\n※ 혼잡시간 : 11:30~12:10",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "모듬햄부대찌개 : 5,500원\n불고기&우렁쌈밥 : 6,000원",
+              "items": [
+                {
+                  "name": "모듬햄부대찌개",
+                  "price": 5500,
+                  "tags": []
+                },
+                {
+                  "name": "불고기&우렁쌈밥",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:00",
+            "end": "14:00"
+          },
+          "busyHours": {
+            "start": "11:30",
+            "end": "12:10"
+          },
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "콩나물밥&소불고기 : 6,000원\n\n※ 운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "콩나물밥&소불고기 : 6,000원",
+              "items": [
+                {
+                  "name": "콩나물밥&소불고기",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "매콤닭볶음탕 : 6,000원\n\n※ 운영시간 : 17:30~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "매콤닭볶음탕 : 6,000원",
+              "items": [
+                {
+                  "name": "매콤닭볶음탕",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "third_cafeteria",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "목살김치찌개&뿌링클치킨 : 6,000원\n\n짜계볶 : 6,000원\n\n<든든한끼샐러드코너>\n\n풀드포크샐러드(채식변경가능) : 9,000원\n\n※ 든든한끼샐러드 코너는 항상 채식변경가능합니다\n\n※ 운영시간 : 11:00~14:00\n\n※ 혼잡시간 : 11:50~12:20",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "목살김치찌개&뿌링클치킨 : 6,000원\n짜계볶 : 6,000원",
+              "items": [
+                {
+                  "name": "목살김치찌개&뿌링클치킨",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "짜계볶",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "title": "든든한끼샐러드코너",
+              "price": null,
+              "rawText": "풀드포크샐러드(채식변경가능) : 9,000원",
+              "items": [
+                {
+                  "name": "풀드포크샐러드(채식변경가능)",
+                  "price": 9000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:00",
+            "end": "14:00"
+          },
+          "busyHours": {
+            "start": "11:50",
+            "end": "12:20"
+          },
+          "notes": [
+            "※ 든든한끼샐러드 코너는 항상 채식변경가능합니다"
+          ]
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_302",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "<뷔페> 6,500원\n\n불고기필라프 & 소스\n\n찹스테이크\n\n매콤밀떡볶이\n\n김말이튀김\n\n배추된장국\n\n그린샐러드&오늘의차\n\n※운영시간: 11:30~13:30\n\n※혼잡시간: 11:50~12:20",
+          "sections": [
+            {
+              "title": "뷔페",
+              "price": 6500,
+              "rawText": "불고기필라프 & 소스\n찹스테이크\n매콤밀떡볶이\n김말이튀김\n배추된장국\n그린샐러드&오늘의차",
+              "items": [
+                {
+                  "name": "불고기필라프 & 소스",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "찹스테이크",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "매콤밀떡볶이",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "김말이튀김",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "배추된장국",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "그린샐러드&오늘의차",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": {
+            "start": "11:50",
+            "end": "12:20"
+          },
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "<뷔페> 6,500원\n\n파채제육간장불고기\n\n비빔만두\n\n새송이메추리알장조림\n\n콩나물무침\n\n미역국\n\n그린샐러드&오늘의차\n\n※운영시간: 17:00~18:30",
+          "sections": [
+            {
+              "title": "뷔페",
+              "price": 6500,
+              "rawText": "파채제육간장불고기\n비빔만두\n새송이메추리알장조림\n콩나물무침\n미역국\n그린샐러드&오늘의차",
+              "items": [
+                {
+                  "name": "파채제육간장불고기",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "비빔만두",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "새송이메추리알장조림",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "콩나물무침",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "미역국",
+                  "price": null,
+                  "tags": []
+                },
+                {
+                  "name": "그린샐러드&오늘의차",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:00",
+            "end": "18:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_301",
+      "meals": {
+        "breakfast": {
+          "rawText": "<천원의아침밥>\n\n제육컵밥&두유 : 1,000원\n\n삼각김밥&아몬드머핀&두유: 1,000원\n\n즉석떡국OR즉석라면: 1,000원\n\n※  Take- Out전용\n\n※  학생증 지참\n\n※ 08:20~준비수량 소진시까지\n\n※ 카페안쪽 피키피커스에서 수령",
+          "sections": [
+            {
+              "title": "천원의아침밥",
+              "price": null,
+              "rawText": "제육컵밥&두유 : 1,000원\n삼각김밥&아몬드머핀&두유: 1,000원\n즉석떡국OR즉석라면: 1,000원",
+              "items": [
+                {
+                  "name": "제육컵밥&두유",
+                  "price": 1000,
+                  "tags": []
+                },
+                {
+                  "name": "삼각김밥&아몬드머핀&두유",
+                  "price": 1000,
+                  "tags": []
+                },
+                {
+                  "name": "즉석떡국OR즉석라면",
+                  "price": 1000,
+                  "tags": []
+                }
+              ],
+              "notes": [
+                "※  Take- Out전용",
+                "※  학생증 지참",
+                "※ 08:20~준비수량 소진시까지",
+                "※ 카페안쪽 피키피커스에서 수령"
+              ]
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "<식사>\n\n새우튀김하이라이스&꽈배기 : 6,500원\n\n(뚝)순살감자탕&두부구이: 6,500원\n\n※ 운영시간 11:30~13:30\n\n<TAKE-OUT>\n\n새우단호박샐러드 : 5,500원\n\n헬스팩 : 6,000원\n\n※ 운영시간 : 10:30~16:00\n\n※ 요일별 샐러드 종류 변경(월10회 : 5,300원, 월20회 : 5,250원)\n\n<301동1층  교직원전용식당>\n\n두부돼지고기보쌈&부추전:  9,000원\n\n※ 교직원이용시간 : 11:30~12:15\n\n※ 학생 및 대학원생 이용시간  12:15~13:30\n\n<TAKE-OUT 카페 301동>\n\n※ 운영시간 :  08:30~16:00\n\n※ 신학기 카페 이벤트 : 아메리카노(ICE: 2,000원/ HOT: 1,800원)",
+          "sections": [
+            {
+              "title": "식사",
+              "price": null,
+              "rawText": "새우튀김하이라이스&꽈배기 : 6,500원\n(뚝)순살감자탕&두부구이: 6,500원",
+              "items": [
+                {
+                  "name": "새우튀김하이라이스&꽈배기",
+                  "price": 6500,
+                  "tags": []
+                },
+                {
+                  "name": "(뚝)순살감자탕&두부구이",
+                  "price": 6500,
+                  "tags": []
+                }
+              ],
+              "notes": [
+                "※ 운영시간 11:30~13:30"
+              ]
+            },
+            {
+              "title": "TAKE-OUT",
+              "price": null,
+              "rawText": "새우단호박샐러드 : 5,500원\n헬스팩 : 6,000원",
+              "items": [
+                {
+                  "name": "새우단호박샐러드",
+                  "price": 5500,
+                  "tags": []
+                },
+                {
+                  "name": "헬스팩",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": [
+                "※ 운영시간 : 10:30~16:00",
+                "※ 요일별 샐러드 종류 변경(월10회 : 5,300원, 월20회 : 5,250원)"
+              ]
+            },
+            {
+              "title": "301동1층 교직원전용식당",
+              "price": null,
+              "rawText": "두부돼지고기보쌈&부추전:  9,000원",
+              "items": [
+                {
+                  "name": "두부돼지고기보쌈&부추전",
+                  "price": 9000,
+                  "tags": []
+                }
+              ],
+              "notes": [
+                "※ 교직원이용시간 : 11:30~12:15",
+                "※ 학생 및 대학원생 이용시간  12:15~13:30"
+              ]
+            },
+            {
+              "title": "TAKE-OUT 카페 301동",
+              "price": null,
+              "rawText": "",
+              "items": [],
+              "notes": [
+                "※ 운영시간 :  08:30~16:00",
+                "※ 신학기 카페 이벤트 : 아메리카노(ICE: 2,000원/ HOT: 1,800원)"
+              ]
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n단호박스프/무채어묵국,미트볼케찹조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "단호박스프/무채어묵국,미트볼케찹조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "단호박스프/무채어묵국,미트볼케찹조림,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "백순대닭갈비&열무된장국 : 6,000원\n\n바지락칼국수&왕만두찜 : 6,000원\n\n(잇템)순살햄후라이 : 2,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "백순대닭갈비&열무된장국 : 6,000원\n바지락칼국수&왕만두찜 : 6,000원\n(잇템)순살햄후라이 : 2,000원",
+              "items": [
+                {
+                  "name": "백순대닭갈비&열무된장국",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "바지락칼국수&왕만두찜",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)순살햄후라이",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "돼지고기쫄면순두부찌개&너비아니구이 : 6,000원\n\n나시고랭볶음밥*계란후라이&생선까스 : 6,000원\n\n(잇템)후라이드치킨 : 4,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "돼지고기쫄면순두부찌개&너비아니구이 : 6,000원\n나시고랭볶음밥*계란후라이&생선까스 : 6,000원\n(잇템)후라이드치킨 : 4,000원",
+              "items": [
+                {
+                  "name": "돼지고기쫄면순두부찌개&너비아니구이",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "나시고랭볶음밥*계란후라이&생선까스",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)후라이드치킨",
+                  "price": 4000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-07&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-07&orderby=DESC"
+  }
+}
