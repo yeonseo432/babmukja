@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-05",
+  "updatedAt": "2026-10-04T03:54:39+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-05&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "student_center",
+      "meals": {
+        "breakfast": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "jahayeon_3f",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "jahayeon_2f",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dongwon",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "치즈돈까스&미니우동 : 6,500원\n\n※ 운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "치즈돈까스&미니우동 : 6,500원",
+              "items": [
+                {
+                  "name": "치즈돈까스&미니우동",
+                  "price": 6500,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "중화덮밥 : 6,000원\n\n※ 운영시간 : 17:30~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "중화덮밥 : 6,000원",
+              "items": [
+                {
+                  "name": "중화덮밥",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "third_cafeteria",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_302",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "대체공휴일휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일휴무",
+              "items": [
+                {
+                  "name": "대체공휴일휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "building_301",
+      "meals": {
+        "breakfast": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "대체공휴일 휴무",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "대체공휴일 휴무",
+              "items": [
+                {
+                  "name": "대체공휴일 휴무",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n콘스프/얼큰콩나물국,치킨너겟,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "콘스프/얼큰콩나물국,치킨너겟,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "콘스프/얼큰콩나물국,치킨너겟,계란후라이,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "평양식왕만두국&핫도그 : 6,000원\n\n(잇템)버팔로윙 : 4,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "평양식왕만두국&핫도그 : 6,000원\n(잇템)버팔로윙 : 4,000원",
+              "items": [
+                {
+                  "name": "평양식왕만두국&핫도그",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)버팔로윙",
+                  "price": 4000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "콘비엔나마요덮밥&치즈카츠 : 6,000원\n\n(잇템)꿔바로우 : 3,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "콘비엔나마요덮밥&치즈카츠 : 6,000원\n(잇템)꿔바로우 : 3,000원",
+              "items": [
+                {
+                  "name": "콘비엔나마요덮밥&치즈카츠",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)꿔바로우",
+                  "price": 3000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-05&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-05&orderby=DESC"
+  }
+}
