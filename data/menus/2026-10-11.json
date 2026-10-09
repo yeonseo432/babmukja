@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-11",
+  "updatedAt": "2026-10-10T05:04:07+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-11&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "정전으로 휴점",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "정전으로 휴점",
+              "items": [
+                {
+                  "name": "정전으로 휴점",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "정전으로 휴점",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "정전으로 휴점",
+              "items": [
+                {
+                  "name": "정전으로 휴점",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n당근스프/두부새우젓찌개,단호박조림,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "당근스프/두부새우젓찌개,단호박조림,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "당근스프/두부새우젓찌개,단호박조림,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "일식커리돈까스덮밥&푸질리샐러드 : 6,000원\n\n(잇템)포테이토핫도그 : 3,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "일식커리돈까스덮밥&푸질리샐러드 : 6,000원\n(잇템)포테이토핫도그 : 3,000원",
+              "items": [
+                {
+                  "name": "일식커리돈까스덮밥&푸질리샐러드",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)포테이토핫도그",
+                  "price": 3000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "닭곰탕*소면사리&수제김치오징어전 : 6,000원\n\n(잇템)새우튀김*타르타르소스 : 3,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "닭곰탕*소면사리&수제김치오징어전 : 6,000원\n(잇템)새우튀김*타르타르소스 : 3,000원",
+              "items": [
+                {
+                  "name": "닭곰탕*소면사리&수제김치오징어전",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)새우튀김*타르타르소스",
+                  "price": 3000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-11&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-11&orderby=DESC"
+  }
+}
