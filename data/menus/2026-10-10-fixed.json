@@ -1,0 +1,47 @@
+[
+  {
+    "cafeteriaId": "burgerun_burger",
+    "name": "버거운버거",
+    "meals": {
+      "breakfast": {
+        "rawText": "",
+        "sections": [],
+        "imagePath": "assets/menu_images/burger.jpeg",
+        "hours": {
+          "start": "09:00",
+          "end": "20:00"
+        },
+        "busyHours": null,
+        "notes": [
+          "※ 라스트오더 19:40"
+        ]
+      },
+      "lunch": {
+        "rawText": "",
+        "sections": [],
+        "imagePath": "assets/menu_images/burger.jpeg",
+        "hours": {
+          "start": "09:00",
+          "end": "20:00"
+        },
+        "busyHours": null,
+        "notes": [
+          "※ 라스트오더 19:40"
+        ]
+      },
+      "dinner": {
+        "rawText": "",
+        "sections": [],
+        "imagePath": "assets/menu_images/burger.jpeg",
+        "hours": {
+          "start": "09:00",
+          "end": "20:00"
+        },
+        "busyHours": null,
+        "notes": [
+          "※ 라스트오더 19:40"
+        ]
+      }
+    }
+  }
+]
