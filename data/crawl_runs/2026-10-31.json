@@ -1,0 +1,167 @@
+{
+  "runDate": "2026-10-31",
+  "startedAt": "2026-10-31T05:16:12+09:00",
+  "targetDates": [
+    "2026-10-31",
+    "2026-11-01",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06"
+  ],
+  "sources": {
+    "2026-10-31": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-31&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-10-31.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-10-31&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-10-31.html",
+        "changed": true
+      }
+    },
+    "2026-11-01": {
+      "snuco": {
+        "status": "failed",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-01&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-11-01.html",
+        "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>"
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-01&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-11-01.html",
+        "changed": true
+      }
+    },
+    "2026-11-02": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-02&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-11-02.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-02&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-11-02.html",
+        "changed": true
+      }
+    },
+    "2026-11-03": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-03&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-11-03.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-03&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-11-03.html",
+        "changed": true
+      }
+    },
+    "2026-11-04": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-04&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-11-04.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "failed",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-04&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-11-04.html",
+        "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>"
+      }
+    },
+    "2026-11-05": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-05&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-11-05.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-05&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-11-05.html",
+        "changed": true
+      }
+    },
+    "2026-11-06": {
+      "snuco": {
+        "status": "success",
+        "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-06&orderby=DESC",
+        "rawPath": "data/raw/snuco/2026-11-06.html",
+        "changed": true
+      },
+      "dorm": {
+        "status": "success",
+        "sourceUrl": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-06&orderby=DESC",
+        "rawPath": "data/raw/dorm/2026-11-06.html",
+        "changed": true
+      }
+    }
+  },
+  "newCafeterias": [],
+  "metadataChanges": [],
+  "generatedFiles": [
+    "data/menus/2026-10-31.json",
+    "data/menus/2026-10-31-fixed.json",
+    "data/menus/2026-11-02.json",
+    "data/menus/2026-11-02-fixed.json",
+    "data/menus/2026-11-03.json",
+    "data/menus/2026-11-03-fixed.json",
+    "data/menus/2026-11-04.json",
+    "data/menus/2026-11-04-fixed.json",
+    "data/menus/2026-11-05.json",
+    "data/menus/2026-11-05-fixed.json",
+    "data/menus/2026-11-06.json",
+    "data/menus/2026-11-06-fixed.json",
+    "data/bundles/2026-10-31-7d.json"
+  ],
+  "unchangedDates": [],
+  "removedRawFiles": [
+    "data/raw/snuco/2026-09-02.html",
+    "data/raw/snuco/2026-08-21.html",
+    "data/raw/snuco/2026-09-01.html",
+    "data/raw/snuco/2026-08-29.html",
+    "data/raw/snuco/2026-09-03.html",
+    "data/raw/snuco/2026-08-31.html",
+    "data/raw/snuco/2026-08-28.html",
+    "data/raw/snuco/2026-08-20.html",
+    "data/raw/snuco/2026-08-19.html",
+    "data/raw/snuco/2026-08-16.html",
+    "data/raw/snuco/2026-08-15.html",
+    "data/raw/snuco/2026-08-17.html",
+    "data/raw/snuco/2026-08-30.html",
+    "data/raw/snuco/2026-08-18.html",
+    "data/raw/dorm/2026-09-02.html",
+    "data/raw/dorm/2026-08-21.html",
+    "data/raw/dorm/2026-09-01.html",
+    "data/raw/dorm/2026-08-29.html",
+    "data/raw/dorm/2026-09-03.html",
+    "data/raw/dorm/2026-08-31.html",
+    "data/raw/dorm/2026-08-28.html",
+    "data/raw/dorm/2026-08-20.html",
+    "data/raw/dorm/2026-08-19.html",
+    "data/raw/dorm/2026-08-16.html",
+    "data/raw/dorm/2026-08-15.html",
+    "data/raw/dorm/2026-08-17.html",
+    "data/raw/dorm/2026-08-30.html",
+    "data/raw/dorm/2026-08-18.html"
+  ],
+  "removedBundleFiles": [
+    "data/bundles/2026-08-28-7d.json",
+    "data/bundles/2026-08-15-7d.json"
+  ],
+  "validationErrors": [],
+  "finishedAt": "2026-10-31T05:18:47+09:00"
+}
