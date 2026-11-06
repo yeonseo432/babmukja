@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-08",
+  "updatedAt": "2026-11-07T06:10:08+09:00",
+  "sourceUrl": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-08&orderby=DESC",
+  "cafeterias": [
+    {
+      "cafeteriaId": "dormitory",
+      "meals": {
+        "breakfast": {
+          "rawText": "",
+          "sections": [],
+          "hours": null,
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "등심탕수육 : 6,000원\n\n※ 운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "등심탕수육 : 6,000원",
+              "items": [
+                {
+                  "name": "등심탕수육",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "파채불고기 : 6,000원\n\n※ 운영시간 : 17:30~19:00",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "파채불고기 : 6,000원",
+              "items": [
+                {
+                  "name": "파채불고기",
+                  "price": 6000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:00"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    },
+    {
+      "cafeteriaId": "ourhome_901",
+      "meals": {
+        "breakfast": {
+          "rawText": "세미양식부페 : 5,000원\n\n그린스프/재첩무국,알감자버터구이,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드\n\n※운영시간 : 08:00~09:30",
+          "sections": [
+            {
+              "title": "세미양식부페",
+              "price": 5000,
+              "rawText": "그린스프/재첩무국,알감자버터구이,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드",
+              "items": [
+                {
+                  "name": "그린스프/재첩무국,알감자버터구이,오믈렛,토스트,씨리얼, 흰우유/두유,그린샐러드",
+                  "price": null,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "08:00",
+            "end": "09:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "lunch": {
+          "rawText": "꼬치어묵김치우동&만두카츠 : 6,000원\n\n(잇템)후라이드치킨 : 4,000원\n\n※운영시간 : 11:30~13:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "꼬치어묵김치우동&만두카츠 : 6,000원\n(잇템)후라이드치킨 : 4,000원",
+              "items": [
+                {
+                  "name": "꼬치어묵김치우동&만두카츠",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)후라이드치킨",
+                  "price": 4000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "11:30",
+            "end": "13:30"
+          },
+          "busyHours": null,
+          "notes": []
+        },
+        "dinner": {
+          "rawText": "돌솥제육장조림버터비빔밥*계란후라이&지마구 : 6,000원\n\n(잇템)소떡소떡 : 2,000원\n\n※운영시간 : 17:30~19:30",
+          "sections": [
+            {
+              "title": "general",
+              "price": null,
+              "rawText": "돌솥제육장조림버터비빔밥*계란후라이&지마구 : 6,000원\n(잇템)소떡소떡 : 2,000원",
+              "items": [
+                {
+                  "name": "돌솥제육장조림버터비빔밥*계란후라이&지마구",
+                  "price": 6000,
+                  "tags": []
+                },
+                {
+                  "name": "(잇템)소떡소떡",
+                  "price": 2000,
+                  "tags": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "hours": {
+            "start": "17:30",
+            "end": "19:30"
+          },
+          "busyHours": null,
+          "notes": []
+        }
+      }
+    }
+  ],
+  "sourceUrls": {
+    "snuco": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-08&orderby=DESC",
+    "dorm": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-08&orderby=DESC"
+  }
+}
